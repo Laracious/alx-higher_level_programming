@@ -1,8 +1,8 @@
-##Python - Hello, World
+## Python - Hello, World
 
-###Python is a popular programming language. It was created by Guido van Rossum, and released in 1991.
+### Python is a popular programming language. It was created by Guido van Rossum, and released in 1991.
 
-###Why Python?
+### Why Python?
 Python works on different platforms (Windows, Mac, Linux, Raspberry Pi, etc).
 Python has a simple syntax similar to the English language.
 Python has syntax that allows developers to write programs with fewer lines than some other programming languages.
