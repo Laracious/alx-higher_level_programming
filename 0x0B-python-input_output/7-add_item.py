@@ -2,14 +2,22 @@
 """script to add all arguments to a list"""
 
 import sys
+import json
+from save_to_json_file import save_to_json_file
+from load_from_json_file import load_from_json_file
 
-save_to_json_file = __import__('7-save_to_json_file').save_to_json_file
+def main():
+    # Load the current list from file
+    try:
+        items = load_from_json_file("add_item.json")
+    except FileNotFoundError:
+        items = []
 
-load_from_json_file = __import__('8-load_from_json_file').load_from_json_file
-try:
-    my_list = load_from_json_file('add_item.json')
-    my_list.extend(sys.argv[1:])
-    save_to_json_file(my_list, 'add_item.json')
+    # Add all the arguments to the list
+    items += sys.argv[1:]
 
-except FileNotFoundError:
-    save_to_json_file(sys.argv[1:], 'add_item.json')
+    # Save the updated list to file
+    save_to_json_file(items, "add_item.json")
+
+if __name__ == "__main__":
+    main()
