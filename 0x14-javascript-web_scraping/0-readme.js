@@ -1,14 +1,9 @@
 #!/usr/bin/node
-/*
-    reads and prints the content of a file
-*/
 const fs = require('fs');
-const nameFile = process.argv[2];
+const args = process.argv.slice(2);
+const fileName = args[0];
 
-fs.readFile(nameFile, 'utf8', function (err, data) {
-  if (err) {
-    console.log(err);
-  } else {
-    process.stdout.write(data);
-  }
+fs.readFile(fileName, 'utf-8', (err, data) => {
+  if (err) console.log(err);
+  else console.log(data);
 });
